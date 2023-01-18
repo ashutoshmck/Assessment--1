@@ -41,6 +41,4 @@ function calculateScore(rolls) {
   console.log(frameScores);
   return totalScore;
 }
-console.log(
-  calculateScore([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6])
-);
+module.exports = { calculateScore };
