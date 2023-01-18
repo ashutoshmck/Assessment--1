@@ -16,5 +16,12 @@ describe("Bowling Game Score Calculate", () => {
         ])
       ).toBe(16);
     });
+    it("Should be 30", () => {
+      expect(
+        calculateScore([
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10,
+        ])
+      ).toBe(30);
+    });
   });
 });

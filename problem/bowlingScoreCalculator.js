@@ -26,21 +26,21 @@ function calculateScore(rolls) {
     if (frameScore < 10) frameScores.unshift(frameScore);
     //spare
     else if (frameScore == 10 && frames[numberOfFrames].length == 2) {
-      frameScore = frameScore + frameScores[numberOfFrames + 1];
-      console.log(frameScores[numberOfFrames + 1]);
+      frameScore = frameScore + frameScores[numberOfFrames];
       frameScores.unshift(frameScore);
     }
     //strike
     else if (frameScore == 10) {
-      frameScore = 10 + frameScores[numberOfFrames + 1];
-      console.log(frameScores[numberOfFrames + 1]);
+      frameScore = 10 + frameScores[numberOfFrames];
       frameScores.unshift(frameScore);
     }
   }
   frameScores.forEach((element) => {
     totalScore += element;
   });
-  console.log(frameScores);
   return totalScore;
 }
+console.log(
+  calculateScore([6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+);
 module.exports = { calculateScore };
