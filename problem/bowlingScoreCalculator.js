@@ -26,12 +26,14 @@ function calculateScore(rolls) {
     if (frameScore < 10) frameScores.unshift(frameScore);
     //spare
     else if (frameScore == 10 && frames[numberOfFrames].length == 2) {
-      frameScore = 10 + frameScores[numberOfFrames + 1];
+      frameScore = frameScore + frameScores[numberOfFrames + 1];
+      console.log(frameScores[numberOfFrames + 1]);
       frameScores.unshift(frameScore);
     }
     //strike
-    else {
+    else if (frameScore == 10) {
       frameScore = 10 + frameScores[numberOfFrames + 1];
+      console.log(frameScores[numberOfFrames + 1]);
       frameScores.unshift(frameScore);
     }
   }
