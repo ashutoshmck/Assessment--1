@@ -2,6 +2,14 @@ function calculateScore(rolls) {
   let frames = [];
 
   for (let i = 0; i < rolls.length; ) {
+    //10th frame
+    if (frames.length == 9) {
+      if (rolls[i] + rolls[i + 1] >= 10)
+        frames.push([rolls[i], rolls[i + 1], rolls[i + 2]]);
+      else frames.push([10]);
+
+      break;
+    }
     //frame in case of open frame or spare
     if (rolls[i] + rolls[i + 1] <= 10) {
       frames.push([rolls[i], rolls[i + 1]]);
@@ -38,9 +46,12 @@ function calculateScore(rolls) {
   frameScores.forEach((element) => {
     totalScore += element;
   });
+  console.log(frames);
   return totalScore;
 }
 console.log(
-  calculateScore([6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+  calculateScore([
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10,
+  ])
 );
 module.exports = { calculateScore };
